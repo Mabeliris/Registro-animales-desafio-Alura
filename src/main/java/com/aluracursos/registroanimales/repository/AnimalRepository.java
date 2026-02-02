@@ -13,7 +13,11 @@ public interface AnimalRepository extends JpaRepository <Animal,Long> {
 
 
     //Buscar animales por tipo
-    @Query("select a from Animal a where a.tipoAnimal like :tipoAnimal")
+    @Query("select a from Animal a where a.tipoAnimal = :tipoAnimal")
     List<Animal> animalesPorTipo(@Param("tipoAnimal") TipoAnimal tipoAnimal);
+
+    @Query("select sum(a.cantidad) from Animal a where a.tipoAnimal = :tipoAnimal")
+    Integer cantidadTotalPorTipo(@Param("tipoAnimal") TipoAnimal tipoAnimal);
+
 
 }

@@ -24,7 +24,11 @@ public class AnimalService {
 
     //animales por tipo
 
-    List<Animal> filtrarAnimalesPorTipo(TipoAnimal tipoAnimal){
+    public List<Animal> filtrarAnimalesPorTipo(TipoAnimal tipoAnimal){
         return animalRepository.animalesPorTipo(tipoAnimal);
+    }
+
+    public List<Animal> listarAnimal(){
+        return animalRepository.findAll();
     }
 }

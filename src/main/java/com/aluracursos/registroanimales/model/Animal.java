@@ -60,4 +60,13 @@ public class Animal {
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
+
+    @Override
+    public String toString() {
+        return
+                " nombreAnimal='" + nombreAnimal + '\'' +
+                ", tipoAnimal=" + tipoAnimal +
+                ", cantidad=" + cantidad ;
+
+    }
 }
